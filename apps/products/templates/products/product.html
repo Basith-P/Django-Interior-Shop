@@ -8,10 +8,12 @@
     {% endif %}
   </div>
   <div class="column is-half">
+    <a href="{% url 'products:category' product.category.slug %}">
+      <p class="subtitle mb-2 tag is-dark">{{ product.category.name }} /</p>
+    </a>
     <h1 class="title">{{ product.name }}</h1>
     <p class="subtitle">Rs. {{ product.price }}</p>
     <p class="subtitle">{{ product.description }}</p>
-    <a href="" class="button is-dark">Add to Cart</a>
   </div>
 </div>
 {% if similar_products %}
