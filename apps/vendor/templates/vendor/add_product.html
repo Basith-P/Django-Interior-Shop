@@ -1,23 +1,21 @@
-{% extends 'core/base.html' %} {% block title %}Login | {%endblock title%} {%block content %}
+{% extends 'core/base.html' %} {% block title %} Add Product | {%endblock title%} {%block content %}
 
-<h1 class="title">Log In</h1>
+<h1 class="title">Add Product</h1>
 
-<form method="post">
+<form method="post" enctype="multipart/form-data">
   {% csrf_token %} {% for field in form %}
-
   <div class="field">
     <label class="label">{{ field.label_tag }}</label>
     <div class="control">{{ field }}</div>
     <p class="help">{{ field.help_text }}</p>
   </div>
   {% endfor %}
-
   <div class="field is-grouped">
     <div class="control">
-      <button class="button is-dark is-link" type="submit">Log In</button>
+      <button class="button is-dark" type="submit">Add</button>
     </div>
     <div class="control">
-      <button class="button is-text is-link is-light" type="reset">Reset</button>
+      <button class="button is-light" type="reset">Reset</button>
     </div>
   </div>
 </form>

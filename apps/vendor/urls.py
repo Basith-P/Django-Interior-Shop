@@ -8,6 +8,7 @@ app_name = "vendor"
 urlpatterns = [
     path("become-vendor/", views.become_vendor, name="become_vendor"),
     path("dashboard/", views.vendor_dashboard, name="vendor_dashboard"),
+    path("add-product/", views.add_product, name="add_product"),
     path(
         "login/",
         auth_views.LoginView.as_view(template_name="vendor/login.html"),

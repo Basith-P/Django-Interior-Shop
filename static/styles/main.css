@@ -11,12 +11,3 @@
   display: inline-block;
   color: #444;
 }
-
-/**
-* Bulma overrides
-*/
-
-.input,
-.button {
-  border-radius: 0;
-}
