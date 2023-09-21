@@ -6,6 +6,10 @@
   background: #444;
 }
 
+main {
+  min-height: 70vh;
+}
+
 .footer a {
   margin-bottom: 15px;
   display: inline-block;
