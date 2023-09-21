@@ -6,27 +6,6 @@
   </div>
 </div>
 
-<div class="columns">
-  {% for product in products %}
-  <div class="column is-one-quarter">
-    <div class="card">
-      <div class="card-image">
-        <figure class="image is-4by3">
-          <img src="{{ product.get_thumbnail }}" alt="{{ product.name }}" />
-        </figure>
-      </div>
-      <div class="card-content">
-        <div class="media">
-          <div class="media-content has-text-centered">
-            <p class="title is-4">{{ product.name }}</p>
-            <p class="subtitle is-6">Rs. {{ product.price }}</p>
-          </div>
-        </div>
-        <a href="" class="button is-dark is-fullwidth">View</a>
-      </div>
-    </div>
-  </div>
-  {% endfor %}
-</div>
+<div class="columns">{% for product in products %} {% include 'products/product_card.html' %} {% endfor %}</div>
 
 {% endblock %}

@@ -21,7 +21,9 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(
+        Category, on_delete=models.CASCADE, related_name="products"
+    )
     vendor = models.ForeignKey(
         Vendor, on_delete=models.CASCADE, related_name="products"
     )
@@ -52,11 +54,11 @@ class Product(models.Model):
 
     def make_thumbnail(self, image, size=(300, 200)):
         img = Image.open(image)
-        img.convert("RGB")
+        img.convert("RGBA")
         img.thumbnail(size)
 
         thumb_io = BytesIO()
-        img.save(thumb_io, "JPEG", quality=85)
+        img.save(thumb_io, "PNG", quality=85)
 
         thumbnail = File(thumb_io, name=image.name)
 
