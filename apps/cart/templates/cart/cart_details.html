@@ -29,8 +29,8 @@
           <a href="?change_quantity={{ item.id }}&quantity=-1">-</a>
           <a href="?change_quantity={{ item.id }}&quantity=1">+</a>
         </td>
-        <td>${{ item.total_price }}</td>
-        <td><a href="?remove_from_cart={{ item.id }}" class="delete">Remove</a></td>
+        <td>₹{{ item.total_price }}</td>
+        <td><a href="?remove={{ item.id }}" class="delete">Remove</a></td>
       </tr>
       {% endfor %}
     </tbody>
