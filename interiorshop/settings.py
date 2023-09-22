@@ -31,6 +31,9 @@ LOGIN_URL = "vendor:login"
 LOGIN_REDIRECT_URL = "vendor:vendor_dashboard"
 LOGOUT_REDIRECT_URL = "core:frontpage"
 
+SESSION_COOKIE_AGE = 60 * 60 * 24  # 1 day
+CART_SESSION_ID = "cart"
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -44,6 +47,7 @@ INSTALLED_APPS = [
     "apps.core",
     "apps.vendor",
     "apps.products",
+    "apps.cart",
 ]
 
 MIDDLEWARE = [

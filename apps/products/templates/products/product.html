@@ -16,6 +16,25 @@
     <p class="subtitle">{{ product.description }}</p>
   </div>
 </div>
+
+{% if messages %} {% for message in messages %}
+<div class="notification is-{{ message.tags }} is-toast">{{ message }}</div>
+{% endfor %} {% endif %}
+
+<form method="post">
+  {% csrf_token %}
+  <div class="field has-addons">
+    <div class="control">
+      <input class="input" type="number" name="quantity" value="1" min="1" />
+    </div>
+    <div class="control">
+      <button class="button is-dark" type="submit">Add to Cart</button>
+    </div>
+  </div>
+</form>
+
+<hr />
+
 {% if similar_products %}
 <h2 class="title">Similar Products</h2>
 {% endif %}
