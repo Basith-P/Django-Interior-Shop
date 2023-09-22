@@ -1,0 +1,10 @@
+{% extends 'core/base.html' %} {% block title %}{{query}} | {%endblock title %} {%block content %} {% if products %}
+<div class="columns mb-5">
+  <div class="column is-full has-text-centered">
+    <h1 class="title">Results for: {{query}}</h1>
+  </div>
+</div>
+{% endif %}
+
+<div class="columns">{% for product in products %} {% include 'products/product_card.html' %} {% endfor %}</div>
+{% endblock content %}

@@ -24,7 +24,9 @@
       <tbody>
         {% for product in products %}
         <tr>
-          <td>{{product.name}}</td>
+          <td>
+            <a href="{% url 'products:product' product.category.slug product.slug %}">{{product.name}}</a>
+          </td>
           <td>₹{{product.price}}</td>
           <td>
             <a href="/vendor/product/{{product.id}}/edit" class="button is-dark is-small">Edit</a>
